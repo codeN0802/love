@@ -1,4 +1,6 @@
-<html lang="vi"><head>
+<html lang="vi">
+
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <!--
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -6,41 +8,36 @@
   <meta http-equiv="Expires" content="0" />
   -->
   <title>HỮU NGHỊ</title>
-  <link rel="stylesheet" href="css.css"  media="screen">
+  <link rel="stylesheet" href="css.css" media="screen">
 
   <script type="text/javascript" charset="utf-8">
-    function hasClassName(inElement, inClassName)
-    {
-        var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)');
-        return regExp.test(inElement.className);
+    function hasClassName(inElement, inClassName) {
+      var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)');
+      return regExp.test(inElement.className);
     }
 
-    function addClassName(inElement, inClassName)
-    {
-        if (!hasClassName(inElement, inClassName))
-            inElement.className = [inElement.className, inClassName].join(' ');
+    function addClassName(inElement, inClassName) {
+      if (!hasClassName(inElement, inClassName))
+        inElement.className = [inElement.className, inClassName].join(' ');
     }
 
-    function removeClassName(inElement, inClassName)
-    {
-        if (hasClassName(inElement, inClassName)) {
-            var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)', 'g');
-            var curClasses = inElement.className;
-            inElement.className = curClasses.replace(regExp, ' ');
-        }
+    function removeClassName(inElement, inClassName) {
+      if (hasClassName(inElement, inClassName)) {
+        var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)', 'g');
+        var curClasses = inElement.className;
+        inElement.className = curClasses.replace(regExp, ' ');
+      }
     }
 
-    function toggleClassName(inElement, inClassName)
-    {
-        if (hasClassName(inElement, inClassName))
-            removeClassName(inElement, inClassName);
-        else
-            addClassName(inElement, inClassName);
+    function toggleClassName(inElement, inClassName) {
+      if (hasClassName(inElement, inClassName))
+        removeClassName(inElement, inClassName);
+      else
+        addClassName(inElement, inClassName);
     }
 
-    function toggleShape()
-    {
-      
+    function toggleShape() {
+
       var shape = document.getElementById('shape');
       if (hasClassName(shape, 'ring')) {
         removeClassName(shape, 'ring');
@@ -49,7 +46,7 @@
         removeClassName(shape, 'cube');
         addClassName(shape, 'ring');
       }
-      
+
       var stage = document.getElementById('stage');
       if (hasClassName(shape, 'ring'))
         stage.style.webkitTransform = 'translateZ(-200px)';
@@ -58,12 +55,10 @@
     }
   </script>
 </head>
+
 <body>
 
   <div style="text-align: right;padding: 15px;"><a href="#" class="classname" onclick="toggleShape()">Đổi kiểu</a></div>
-  <div >
-  	<h1>Hello bé </h1>
-  </div>
   <div id="container">
     <div id="stage" style="">
       <div id="shape" class=" backfaces  cube">
@@ -84,4 +79,6 @@
   </div>
 
 
-</body></html>
+</body>
+
+</html>
